@@ -30,7 +30,7 @@
 </div>
 
 <script>
-const PASSWORD = "1234"; // change your password
+const PASSWORD = "2240"; // change your password
 let muted = true;
 let lastInput = "";
 
@@ -84,10 +84,12 @@ async function getAISuggestions(text){
   replyDiv.innerHTML = "<p>Loading suggestions...</p>";
 
   try{
-    const res = await fetch("http://localhost:3000/get-suggestions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text })
+    const res = await fetch("https://hinglish-ai.onrender.com/get-suggestions", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ text })
+});
+
     });
 
     const data = await res.json();
